@@ -1,0 +1,21 @@
+{
+    "version": "1.0",
+    "selectors": {
+        "responseContainer": ".mt-sm.flex.items-center.justify-between",
+        "rewriteButton": "button:has(svg[data-icon=\"repeat\"])",
+        "copyButton": "button:has(svg[data-icon=\"copy\"])"
+    },
+    "buttons": {
+        "copyClean": {
+            "icon": "broom",
+            "text": "Copy Clean",
+            "className": "copy-clean-btn"
+        },
+        "sendWP": {
+            "icon": "wordpress",
+            "text": "Send to WP",
+            "className": "send-wp-btn"
+        }
+    },
+    "updateInterval": 3600000
+}
