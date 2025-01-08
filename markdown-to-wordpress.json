@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "description": "Markdown to WordPress format conversion rules",
+  "rules": {
+    "headers": {
+      "h1": {
+        "pattern": "^# (.+)$",
+        "replace": "<!-- wp:heading {\"level\":1} -->\n<h1>$1</h1>\n<!-- /wp:heading -->"
+      },
+      "h2": {
+        "pattern": "^## (.+)$",
+        "replace": "<!-- wp:heading {\"level\":2} -->\n<h2>$1</h2>\n<!-- /wp:heading -->"
+      },
+      "h3": {
+        "pattern": "^### (.+)$",
+        "replace": "<!-- wp:heading {\"level\":3} -->\n<h3>$1</h3>\n<!-- /wp:heading -->"
+      }
+    },
+    "emphasis": {
+      "bold": {
+        "pattern": "\\*\\*(.+?)\\*\\*",
+        "replace": "<!-- wp:paragraph -->\n<p><strong>$1</strong></p>\n<!-- /wp:paragraph -->"
+      },
+      "italic": {
+        "pattern": "\\*(.+?)\\*",
+        "replace": "<!-- wp:paragraph -->\n<p><em>$1</em></p>\n<!-- /wp:paragraph -->"
+      }
+    },
+    "lists": {
+      "unordered": {
+        "pattern": "^- (.+)$",
+        "replace": "<!-- wp:list -->\n<ul>\n<li>$1</li>\n</ul>\n<!-- /wp:list -->"
+      },
+      "ordered": {
+        "pattern": "^\\d+\\. (.+)$",
+        "replace": "<!-- wp:list {\"ordered\":true} -->\n<ol>\n<li>$1</li>\n</ol>\n<!-- /wp:list -->"
+      }
+    },
+    "code": {
+      "inline": {
+        "pattern": "`(.+?)`",
+        "replace": "<code>$1</code>"
+      },
+      "block": {
+        "pattern": "```([\\s\\S]+?)```",
+        "replace": "<!-- wp:code -->\n<pre class=\"wp-block-code\"><code>$1</code></pre>\n<!-- /wp:code -->"
+      }
+    },
+    "links": {
+      "pattern": "\\[(.+?)\\]\\((.+?)\\)",
+      "replace": "<!-- wp:paragraph -->\n<p><a href=\"$2\">$1</a></p>\n<!-- /wp:paragraph -->"
+    },
+    "images": {
+      "pattern": "!\\[(.+?)\\]\\((.+?)\\)",
+      "replace": "<!-- wp:image -->\n<figure class=\"wp-block-image\"><img src=\"$2\" alt=\"$1\"/></figure>\n<!-- /wp:image -->"
+    },
+    "blockquotes": {
+      "pattern": "^> (.+)$",
+      "replace": "<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>$1</p></blockquote>\n<!-- /wp:quote -->"
+    },
+    "paragraphs": {
+      "pattern": "^(?!<[!\\-\\w])(.+)$",
+      "replace": "<!-- wp:paragraph -->\n<p>$1</p>\n<!-- /wp:paragraph -->"
+    }
+  }
+}
