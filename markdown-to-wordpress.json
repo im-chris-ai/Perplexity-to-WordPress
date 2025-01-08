@@ -72,7 +72,7 @@
     },
     "paragraph": {
       "pattern": "^(?![#\\s])(.+)$",
-      "replace": "<!-- wp:paragraph -->\n<p>$1</p>\n<!-- /wp:paragraph -->"
+      "replace": "<!-- wp:paragraph -->\n<p>$1</p>\n<!-- /wp:paragraph -->\n"
     }
   }
 }
