@@ -5,15 +5,27 @@
     "headers": {
       "h1": {
         "pattern": "^# (.+)$",
-        "replace": "<!-- wp:heading {\"level\":1} -->\n<h1>$1</h1>\n<!-- /wp:heading -->"
+        "replace": "<!-- wp:heading {\"level\":1} -->\n<h1 class=\"wp-block-heading\">$1</h1>\n<!-- /wp:heading -->"
       },
       "h2": {
         "pattern": "^## (.+)$",
-        "replace": "<!-- wp:heading {\"level\":2} -->\n<h2>$1</h2>\n<!-- /wp:heading -->"
+        "replace": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">$1</h2>\n<!-- /wp:heading -->"
       },
       "h3": {
         "pattern": "^### (.+)$",
-        "replace": "<!-- wp:heading {\"level\":3} -->\n<h3>$1</h3>\n<!-- /wp:heading -->"
+        "replace": "<!-- wp:heading {\"level\":3} -->\n<h3 class=\"wp-block-heading\">$1</h3>\n<!-- /wp:heading -->"
+      },
+      "h4": {
+        "pattern": "^#### (.+)$",
+        "replace": "<!-- wp:heading {\"level\":4} -->\n<h4 class=\"wp-block-heading\">$1</h4>\n<!-- /wp:heading -->"
+      },
+      "h5": {
+        "pattern": "^##### (.+)$",
+        "replace": "<!-- wp:heading {\"level\":5} -->\n<h5 class=\"wp-block-heading\">$1</h5>\n<!-- /wp:heading -->"
+      },
+      "h6": {
+        "pattern": "^###### (.+)$",
+        "replace": "<!-- wp:heading {\"level\":6} -->\n<h6 class=\"wp-block-heading\">$1</h6>\n<!-- /wp:heading -->"
       }
     },
     "emphasis": {
@@ -58,8 +70,8 @@
       "pattern": "^> (.+)$",
       "replace": "<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>$1</p></blockquote>\n<!-- /wp:quote -->"
     },
-    "paragraphs": {
-      "pattern": "^(?!<[!\\-\\w])(.+)$",
+    "paragraph": {
+      "pattern": "^(?![#\\s])(.+)$",
       "replace": "<!-- wp:paragraph -->\n<p>$1</p>\n<!-- /wp:paragraph -->"
     }
   }
