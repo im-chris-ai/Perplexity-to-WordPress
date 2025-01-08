@@ -1,7 +1,7 @@
 {
     "version": "1.0",
     "selectors": {
-        "responseContainer": ".mt-sm.flex.items-center.justify-between",
+        "responseContainer": ".flex.items-center.justify-between > div",
         "rewriteButton": "button:has(svg[data-icon=\"repeat\"])",
         "copyButton": "button:has(svg[data-icon=\"copy\"])"
     },
