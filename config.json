@@ -17,5 +17,5 @@
             "className": "send-wp-btn"
         }
     },
-    "updateInterval": 86400000 // 24 hours in milliseconds
+    "updateInterval": 86400000
 }
