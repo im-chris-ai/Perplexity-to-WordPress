@@ -1,0 +1,29 @@
+{
+    "rules": [
+        {
+            "markdown": "#",
+            "wordpress": "<h1>"
+        },
+        {
+            "markdown": "##",
+            "wordpress": "<h2>"
+        },
+        {
+            "markdown": "###",
+            "wordpress": "<h3>"
+        },
+        {
+            "markdown": "**",
+            "wordpress": "<strong>"
+        },
+        {
+            "markdown": "*",
+            "wordpress": "<em>"
+        },
+        {
+            "markdown": "![alt text](url)",
+            "wordpress": "<img src=\"url\" alt=\"alt text\">"
+        }
+        // Add more rules as needed
+    ]
+}
