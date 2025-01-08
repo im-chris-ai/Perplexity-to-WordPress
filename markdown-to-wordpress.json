@@ -1,78 +1,41 @@
 {
-  "version": "1.0",
-  "description": "Markdown to WordPress format conversion rules",
-  "rules": {
-    "headers": {
+  "blocks": {
+    "headings": {
       "h1": {
-        "pattern": "^# (.+)$",
-        "replace": "<!-- wp:heading {\"level\":1} -->\n<h1 class=\"wp-block-heading\">$1</h1>\n<!-- /wp:heading -->"
+        "opening": "<!-- wp:heading {\"level\":1} -->",
+        "content": "<h1 class=\"wp-block-heading\">${text}</h1>",
+        "closing": "<!-- /wp:heading -->"
       },
       "h2": {
-        "pattern": "^## (.+)$",
-        "replace": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">$1</h2>\n<!-- /wp:heading -->"
+        "opening": "<!-- wp:heading -->",
+        "content": "<h2 class=\"wp-block-heading\">${text}</h2>",
+        "closing": "<!-- /wp:heading -->"
       },
       "h3": {
-        "pattern": "^### (.+)$",
-        "replace": "<!-- wp:heading {\"level\":3} -->\n<h3 class=\"wp-block-heading\">$1</h3>\n<!-- /wp:heading -->"
+        "opening": "<!-- wp:heading {\"level\":3} -->",
+        "content": "<h3 class=\"wp-block-heading\">${text}</h3>",
+        "closing": "<!-- /wp:heading -->"
       },
       "h4": {
-        "pattern": "^#### (.+)$",
-        "replace": "<!-- wp:heading {\"level\":4} -->\n<h4 class=\"wp-block-heading\">$1</h4>\n<!-- /wp:heading -->"
+        "opening": "<!-- wp:heading {\"level\":4} -->",
+        "content": "<h4 class=\"wp-block-heading\">${text}</h4>",
+        "closing": "<!-- /wp:heading -->"
       },
       "h5": {
-        "pattern": "^##### (.+)$",
-        "replace": "<!-- wp:heading {\"level\":5} -->\n<h5 class=\"wp-block-heading\">$1</h5>\n<!-- /wp:heading -->"
+        "opening": "<!-- wp:heading {\"level\":5} -->",
+        "content": "<h5 class=\"wp-block-heading\">${text}</h5>",
+        "closing": "<!-- /wp:heading -->"
       },
       "h6": {
-        "pattern": "^###### (.+)$",
-        "replace": "<!-- wp:heading {\"level\":6} -->\n<h6 class=\"wp-block-heading\">$1</h6>\n<!-- /wp:heading -->"
+        "opening": "<!-- wp:heading {\"level\":6} -->",
+        "content": "<h6 class=\"wp-block-heading\">${text}</h6>",
+        "closing": "<!-- /wp:heading -->"
       }
-    },
-    "emphasis": {
-      "bold": {
-        "pattern": "\\*\\*(.+?)\\*\\*",
-        "replace": "<!-- wp:paragraph -->\n<p><strong>$1</strong></p>\n<!-- /wp:paragraph -->"
-      },
-      "italic": {
-        "pattern": "\\*(.+?)\\*",
-        "replace": "<!-- wp:paragraph -->\n<p><em>$1</em></p>\n<!-- /wp:paragraph -->"
-      }
-    },
-    "lists": {
-      "unordered": {
-        "pattern": "^- (.+)$",
-        "replace": "<!-- wp:list -->\n<ul>\n<li>$1</li>\n</ul>\n<!-- /wp:list -->"
-      },
-      "ordered": {
-        "pattern": "^\\d+\\. (.+)$",
-        "replace": "<!-- wp:list {\"ordered\":true} -->\n<ol>\n<li>$1</li>\n</ol>\n<!-- /wp:list -->"
-      }
-    },
-    "code": {
-      "inline": {
-        "pattern": "`(.+?)`",
-        "replace": "<code>$1</code>"
-      },
-      "block": {
-        "pattern": "```([\\s\\S]+?)```",
-        "replace": "<!-- wp:code -->\n<pre class=\"wp-block-code\"><code>$1</code></pre>\n<!-- /wp:code -->"
-      }
-    },
-    "links": {
-      "pattern": "\\[(.+?)\\]\\((.+?)\\)",
-      "replace": "<!-- wp:paragraph -->\n<p><a href=\"$2\">$1</a></p>\n<!-- /wp:paragraph -->"
-    },
-    "images": {
-      "pattern": "!\\[(.+?)\\]\\((.+?)\\)",
-      "replace": "<!-- wp:image -->\n<figure class=\"wp-block-image\"><img src=\"$2\" alt=\"$1\"/></figure>\n<!-- /wp:image -->"
-    },
-    "blockquotes": {
-      "pattern": "^> (.+)$",
-      "replace": "<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>$1</p></blockquote>\n<!-- /wp:quote -->"
     },
     "paragraph": {
-      "pattern": "^(?![#\\s])(.+)$",
-      "replace": "<!-- wp:paragraph -->\n<p>$1</p>\n<!-- /wp:paragraph -->\n"
+      "opening": "<!-- wp:paragraph -->",
+      "content": "<p>${text}</p>",
+      "closing": "<!-- /wp:paragraph -->"
     }
   }
 }
